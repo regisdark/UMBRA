@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-
+﻿using System.Linq;
 namespace UMBRA
 {
     internal class Program
@@ -31,7 +23,7 @@ namespace UMBRA
 
                     //(EN).- extract labels & add them to custom class (2 columns have label values)
                     //(ES).- extrae las etiquetas y agrégalas a la clase personalizada (hay 2 columnas que contienen etiquetas)
-                    var _labels = new List<Custom_Classes.Label>();
+                    var _labels = new System.Collections.Generic.List<Custom_Classes.Label>();
                     _labels.AddRange(csvArray[4].Split(';').Select(_l => new Custom_Classes.Label()
                     {
                         STATUS = true,
@@ -44,7 +36,7 @@ namespace UMBRA
                         DESCRIPTION = _l
                     }));
 
-                    var _images = new List<Custom_Classes.Image>();
+                    var _images = new System.Collections.Generic.List<Custom_Classes.Image>();
                     _images.AddRange(csvArray[2].Split(';').Select(x => new Custom_Classes.Image()
                     {
                         STATUS = true,
@@ -75,7 +67,7 @@ namespace UMBRA
                 }
 
             }
-            catch (Exception exc)
+            catch (System.Exception exc)
             {
                 throw exc;
             }
@@ -93,13 +85,13 @@ namespace UMBRA
         {
             try
             {
-                using (var webClient = new WebClient())
+                using (var webClient = new System.Net.WebClient())
                 {
-                    var _imageFromWebSite = webClient.DownloadData(new Uri(_url));
+                    var _imageFromWebSite = webClient.DownloadData(new System.Uri(_url));
                     return _imageFromWebSite;
                 }
             }
-            catch (Exception exc)
+            catch (System.Exception exc)
             {
                 throw exc;
             }
@@ -115,11 +107,11 @@ namespace UMBRA
         {
             try
             {
-                MemoryStream ms = new MemoryStream(byteArrayIn);
-                Image returnImage = Image.FromStream(ms);
+                System.IO.MemoryStream ms = new System.IO.MemoryStream(byteArrayIn);
+                System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
                 returnImage.Save("your directory will be here", System.Drawing.Imaging.ImageFormat.Png);
             }
-            catch (Exception exc)
+            catch (System.Exception exc)
             {
                 throw exc;
             }
