@@ -19,7 +19,7 @@
         public string DESCRIPTION { get; set; }
         /// <summary>
         /// (EN)
-        /// This field can be used for training your model or performing needed operations.
+        /// This field can be used for training your model or performing needed operations
         /// tip.- update this status once value used, this will improve query performance
         /// 
         /// (ES)

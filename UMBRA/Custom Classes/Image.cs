@@ -16,6 +16,12 @@
         /// </summary>
         public string ID_IMAGE { get; set; }
         public string ID_SET { get; set; }
+        /// <summary>
+        /// (EN)
+        /// this will save site URL, useful for obtaining file from site in a separate step
+        /// (ES)
+        /// Este campo guardara la URL del sitio, útil para obtener el archivo de imagen en un paso posterior
+        /// </summary>
         public string URL { get; set; }
         /// <summary>
         /// (EN)
